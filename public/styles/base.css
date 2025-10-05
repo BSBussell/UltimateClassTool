@@ -1,0 +1,265 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text-inverse);
+  font-family: var(--font-family-ui);
+  font-weight: var(--font-weight-regular);
+  line-height: 1.4;
+}
+
+.panel,
+.card,
+.surface,
+.sheet {
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-line);
+  box-shadow: var(--shadow-1);
+  border-radius: var(--radius-1);
+}
+
+.h-title,
+h1,
+.heading-xl {
+  font-size: var(--fs-xl);
+  font-weight: var(--font-weight-heavy);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin: var(--space-5) 0 var(--space-3);
+}
+
+.muted {
+  color: var(--color-muted);
+}
+
+.hr-strong {
+  border: 0;
+  height: 2px;
+  background: var(--color-line-strong);
+  margin: var(--space-5) 0 var(--space-4);
+  position: relative;
+}
+
+.hr-strong::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background: var(--color-line);
+  opacity: 0.65;
+  transform: translateY(2px);
+}
+
+.accent-bar {
+  position: relative;
+  padding-top: var(--space-4);
+}
+
+.accent-bar::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto auto 0;
+  height: 6px;
+  width: 120px;
+  background: var(--color-accent);
+  transform: skewX(-12deg);
+  box-shadow: var(--shadow-2);
+}
+
+.button,
+button,
+.btn {
+  appearance: none;
+  border: 2px solid var(--color-text-inverse);
+  background: transparent;
+  color: var(--color-surface);
+  padding: 10px 16px;
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-radius: var(--radius-0);
+  transition: transform var(--dur-fast) var(--easing-snap), box-shadow var(--dur-fast);
+}
+
+.btn-primary {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-accent-ink);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-2);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-1);
+}
+
+.btn-secondary {
+  background: var(--color-surface);
+  color: var(--color-text);
+  border-color: var(--color-text);
+}
+
+.btn-ghost {
+  background: transparent;
+  border-color: var(--color-surface);
+  color: var(--color-surface);
+}
+
+button:focus-visible,
+.btn:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.navbar {
+  background: #000000;
+  color: var(--color-surface);
+  border-bottom: 2px solid var(--color-line-strong);
+}
+
+.navbar a {
+  color: var(--color-surface);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: var(--font-weight-bold);
+  padding: 14px 12px;
+  display: inline-block;
+}
+
+.navbar a:hover {
+  color: var(--color-accent);
+}
+
+.tabs {
+  border-bottom: 2px solid var(--color-line-strong);
+}
+
+.tab {
+  display: inline-block;
+  padding: 10px 12px;
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  color: var(--color-muted-inverse);
+}
+
+.tab.is-active {
+  color: var(--color-surface);
+  position: relative;
+}
+
+.tab.is-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 4px;
+  background: var(--color-accent);
+  transform: skewX(-12deg);
+}
+
+.card {
+  padding: var(--space-5);
+  border: 2px solid var(--color-line-strong);
+  box-shadow: var(--shadow-2);
+}
+
+.list > li + li {
+  border-top: 1px solid var(--color-line);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+.table th,
+.table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.table thead th {
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: var(--font-weight-bold);
+}
+
+.table tr:hover {
+  background: #fafafa;
+}
+
+.label {
+  display: block;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.04em;
+  color: var(--color-surface);
+}
+
+.input,
+input[type],
+select,
+textarea {
+  width: 100%;
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: 2px solid var(--color-line-strong);
+  padding: 10px 12px;
+  border-radius: var(--radius-0);
+  transition: border-color var(--dur-fast);
+}
+
+.input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--color-accent);
+  outline: 3px solid var(--color-accent);
+  outline-offset: 0;
+}
+
+.help {
+  color: var(--color-muted-inverse);
+  font-size: var(--fs-sm);
+}
+
+.hero {
+  position: relative;
+  background: linear-gradient(180deg, #000000 0%, #0a0a0a 100%);
+  color: var(--color-surface);
+  padding: clamp(24px, 6vw, 72px) var(--space-6);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: -40px;
+  right: -40px;
+  height: 14px;
+  background: var(--color-accent);
+  transform: skewX(-12deg);
+  box-shadow: var(--shadow-3);
+}
+
+.surface {
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+.canvas-dark {
+  background: var(--color-bg);
+  color: var(--color-text-inverse);
+}

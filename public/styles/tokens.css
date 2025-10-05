@@ -1,0 +1,69 @@
+:root {
+  /* Core palette */
+  --color-bg: #0a0a0a;            /* near-black canvas */
+  --color-surface: #ffffff;       /* pure white panels */
+  --color-text: #0a0a0a;          /* default text on white */
+  --color-text-inverse: #ffffff;  /* text on dark */
+  --color-muted: #6b6b6b;         /* secondary text on light */
+  --color-muted-inverse: #b9b9b9; /* secondary text on dark */
+  --color-accent: #ec1825;        /* primary accent (red) */
+  --color-accent-ink: #ffffff;    /* text on accent */
+  --color-line: #111111;          /* hairline on light */
+  --color-line-strong: #000000;   /* 2px strong divider */
+  --color-line-inverse: #2a2a2a;  /* hairline on dark */
+
+  /* Elevation & effects */
+  --shadow-1: 0 1px 0 rgba(0, 0, 0, 0.25);
+  --shadow-2: 0 2px 8px rgba(0, 0, 0, 0.28);
+  --shadow-3: 0 6px 18px rgba(0, 0, 0, 0.35);
+
+  /* Type scale */
+  --font-family-ui: 'RodinHimawari', system-ui, -apple-system, 'Segoe UI', 'Roboto', 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --font-weight-heavy: 800;  /* hero/h1 */
+  --font-weight-bold: 700;   /* section titles/buttons */
+  --font-weight-regular: 500;
+
+  --fs-xxl: clamp(28px, 3vw, 44px);
+  --fs-xl: clamp(22px, 2.4vw, 32px);
+  --fs-lg: 20px;
+  --fs-md: 16px;
+  --fs-sm: 14px;
+  --fs-xs: 12px;
+
+  /* Spacing & radii */
+  --space-0: 0;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --radius-0: 0;
+  --radius-1: 4px;
+  --radius-2: 8px;
+
+  /* Motion */
+  --easing-snap: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --dur-fast: 120ms;
+  --dur-med: 200ms;
+  --dur-hinge: 320ms;
+}
+
+/* Optional “light on white page” canvas variant */
+body.theme-light {
+  --color-bg: #ffffff;
+  --color-surface: #0a0a0a;
+  --color-text: #0a0a0a;
+  --color-text-inverse: #ffffff;
+  --color-line: #e6e6e6;
+  --color-line-inverse: #2a2a2a;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 0ms;
+    --dur-med: 0ms;
+    --dur-hinge: 0ms;
+  }
+}

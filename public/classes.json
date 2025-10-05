@@ -1,9 +1,10 @@
 {
   "All": [],
-  "Grunklies": ["miifighter", "ike", "shulk", "mariod", "miiswordsman", "inkling", "luigi", "lucina", "kamui"],
-  "Zoner": ["samus", "szerosuit", "link", "younglink", "toonlink", "palutena", "peach", "daisy"],
-  "Rushdown": ["fox", "falco", "pikachu", "pichu", "sonic", "inkling"],
-  "Heavy": ["ganon", "krool", "dedede", "wario", "ridley", "gaogaen", "koopa"],
-  "Sword": ["marth", "lucina", "ike", "shulk", "cloud", "chrom", "roy", "kamui"],
-  "Weird": ["gamewatch", "duckhunt", "ice_climber", "robot", "rosetta", "purin", "pikmin", "packun", "random"]
+  "Grunklies": ["miifighter", "ike", "shulk", "mariod", "miiswordsman", "inkling", "luigi", "lucina", "kamui", "pitb", "pit", "ice_climber", "pichu", "richter", "cloud", "wolf", "eflame", "fox"],
+  "The Tricksters": ["shizue", "duckhunt", "diddy", "peach", "link", "snake", "pikmin", "miigunner", "sheik", "reflet", "rockman", "edge", "ptrainer", "mewtwo", "kirby", "wiifit", "palutena", "murabito", "dedede", "krool", "younglink", "master", "toonlink"],
+  "Acrobats": ["gekkouga", "purin", "pikachu", "pacman", "robot", "bayonetta", "szerosuit", "yoshi", "metaknight", "gamewatch"],
+  "Combo Gimp Johnson": ["chrom", "captain", "wario", "marth", "roy", "falco", "mario", "jack"],
+  "Weird": ["trail", "buddy", "tantan", "packun", "zelda", "rosetta", "lucario", "koopajr", "sonic", "random"],
+  "Fighties": ["dolly", "demon", "ken", "ryu", "littlemac", "donkey", "koopa", "gaogaen", "ganon", "ridley"]
+  
 }

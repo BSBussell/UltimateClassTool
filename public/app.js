@@ -177,10 +177,14 @@ export function renderResult(character, options = {}) {
   resultEl.innerHTML = '';
 
   if (!character) {
+    resultEl.classList.remove('slam-in');
     resultEl.classList.add('empty');
     resultEl.textContent = message ?? 'Awaiting roll.';
     return;
   }
+
+  resultEl.classList.remove('empty');
+  resultEl.classList.remove('slam-in');
 
   const hero = document.createElement('div');
   hero.className = 'roll-hero';
@@ -204,6 +208,10 @@ export function renderResult(character, options = {}) {
   hero.appendChild(details);
 
   resultEl.appendChild(hero);
+
+  requestAnimationFrame(() => {
+    resultEl.classList.add('slam-in');
+  });
 }
 
 export function humanizeId(id) {
