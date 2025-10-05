@@ -1,0 +1,698 @@
+[
+  {
+    "id": "bayonetta",
+    "file": "characters/bayonetta_00.png",
+    "focus": {
+      "x": 965,
+      "y": 458
+    }
+  },
+  {
+    "id": "brave",
+    "file": "characters/brave_00.png",
+    "focus": {
+      "x": 574,
+      "y": 521
+    }
+  },
+  {
+    "id": "buddy",
+    "file": "characters/buddy_00.png",
+    "focus": {
+      "x": 443,
+      "y": 651
+    }
+  },
+  {
+    "id": "captain",
+    "file": "characters/captain_00.png",
+    "focus": {
+      "x": 1026,
+      "y": 236
+    }
+  },
+  {
+    "id": "chrom",
+    "file": "characters/chrom_00.png",
+    "focus": {
+      "x": 554,
+      "y": 236
+    }
+  },
+  {
+    "id": "cloud",
+    "file": "characters/cloud_00.png",
+    "focus": {
+      "x": 1196,
+      "y": 599
+    }
+  },
+  {
+    "id": "daisy",
+    "file": "characters/daisy_00.png",
+    "focus": {
+      "x": 563,
+      "y": 324
+    }
+  },
+  {
+    "id": "dedede",
+    "file": "characters/dedede_00.png",
+    "focus": {
+      "x": 753,
+      "y": 247
+    }
+  },
+  {
+    "id": "demon",
+    "file": "characters/demon_00.png",
+    "focus": {
+      "x": 482,
+      "y": 168
+    }
+  },
+  {
+    "id": "diddy",
+    "file": "characters/diddy_00.png",
+    "focus": {
+      "x": 1060,
+      "y": 330
+    }
+  },
+  {
+    "id": "dolly",
+    "file": "characters/dolly_00.png",
+    "focus": {
+      "x": 843,
+      "y": 232
+    }
+  },
+  {
+    "id": "donkey",
+    "file": "characters/donkey_00.png",
+    "focus": {
+      "x": 927,
+      "y": 810
+    }
+  },
+  {
+    "id": "duckhunt",
+    "file": "characters/duckhunt_00.png",
+    "focus": {
+      "x": 294,
+      "y": 826
+    }
+  },
+  {
+    "id": "edge",
+    "file": "characters/edge_00.png",
+    "focus": {
+      "x": 1392,
+      "y": 1583
+    }
+  },
+  {
+    "id": "eflame",
+    "file": "characters/eflame_00.png",
+    "focus": {
+      "x": 914,
+      "y": 487
+    }
+  },
+  {
+    "id": "falco",
+    "file": "characters/falco_00.png",
+    "focus": {
+      "x": 1234,
+      "y": 179
+    }
+  },
+  {
+    "id": "fox",
+    "file": "characters/fox_00.png",
+    "focus": {
+      "x": 360,
+      "y": 299
+    }
+  },
+  {
+    "id": "gamewatch",
+    "file": "characters/gamewatch_00.png",
+    "focus": {
+      "x": 275,
+      "y": 106
+    }
+  },
+  {
+    "id": "ganon",
+    "file": "characters/ganon_00.png",
+    "focus": {
+      "x": 1397,
+      "y": 457
+    }
+  },
+  {
+    "id": "gaogaen",
+    "file": "characters/gaogaen_00.png",
+    "focus": {
+      "x": 795,
+      "y": 470
+    }
+  },
+  {
+    "id": "gekkouga",
+    "file": "characters/gekkouga_00.png",
+    "focus": {
+      "x": 918,
+      "y": 572
+    }
+  },
+  {
+    "id": "ice_climber",
+    "file": "characters/ice_climber_00.png",
+    "focus": {
+      "x": 392,
+      "y": 780
+    }
+  },
+  {
+    "id": "ike",
+    "file": "characters/ike_00.png",
+    "focus": {
+      "x": 1063,
+      "y": 400
+    }
+  },
+  {
+    "id": "inkling",
+    "file": "characters/inkling_00.png",
+    "focus": {
+      "x": 722,
+      "y": 282
+    }
+  },
+  {
+    "id": "jack",
+    "file": "characters/jack_00.png",
+    "focus": {
+      "x": 1333,
+      "y": 471
+    }
+  },
+  {
+    "id": "kamui",
+    "file": "characters/kamui_00.png",
+    "focus": {
+      "x": 508,
+      "y": 269
+    }
+  },
+  {
+    "id": "ken",
+    "file": "characters/ken_00.png",
+    "focus": {
+      "x": 620,
+      "y": 832
+    }
+  },
+  {
+    "id": "kirby",
+    "file": "characters/kirby_00.png",
+    "focus": {
+      "x": 412,
+      "y": 152
+    }
+  },
+  {
+    "id": "koopa",
+    "file": "characters/koopa_00.png",
+    "focus": {
+      "x": 993,
+      "y": 538
+    }
+  },
+  {
+    "id": "koopajr",
+    "file": "characters/koopajr_00.png",
+    "focus": {
+      "x": 944,
+      "y": 195
+    }
+  },
+  {
+    "id": "krool",
+    "file": "characters/krool_00.png",
+    "focus": {
+      "x": 923,
+      "y": 367
+    }
+  },
+  {
+    "id": "link",
+    "file": "characters/link_00.png",
+    "focus": {
+      "x": 664,
+      "y": 494
+    }
+  },
+  {
+    "id": "littlemac",
+    "file": "characters/littlemac_00.png",
+    "focus": {
+      "x": 420,
+      "y": 217
+    }
+  },
+  {
+    "id": "lucario",
+    "file": "characters/lucario_00.png",
+    "focus": {
+      "x": 638,
+      "y": 371
+    }
+  },
+  {
+    "id": "lucas",
+    "file": "characters/lucas_00.png",
+    "focus": {
+      "x": 246,
+      "y": 315
+    }
+  },
+  {
+    "id": "lucina",
+    "file": "characters/lucina_00.png",
+    "focus": {
+      "x": 1649,
+      "y": 716
+    }
+  },
+  {
+    "id": "luigi",
+    "file": "characters/luigi_00.png",
+    "focus": {
+      "x": 506,
+      "y": 292
+    }
+  },
+  {
+    "id": "mario",
+    "file": "characters/mario_00.png",
+    "focus": {
+      "x": 496,
+      "y": 307
+    }
+  },
+  {
+    "id": "mariod",
+    "file": "characters/mariod_00.png",
+    "focus": {
+      "x": 442,
+      "y": 286
+    }
+  },
+  {
+    "id": "marth",
+    "file": "characters/marth_00.png",
+    "focus": {
+      "x": 2002,
+      "y": 260
+    }
+  },
+  {
+    "id": "master",
+    "file": "characters/master_00.png",
+    "focus": {
+      "x": 730,
+      "y": 827
+    }
+  },
+  {
+    "id": "metaknight",
+    "file": "characters/metaknight_00.png",
+    "focus": {
+      "x": 929,
+      "y": 907
+    }
+  },
+  {
+    "id": "mewtwo",
+    "file": "characters/mewtwo_00.png",
+    "focus": {
+      "x": 1064,
+      "y": 474
+    }
+  },
+  {
+    "id": "miifighter",
+    "file": "characters/miifighter_00.png",
+    "focus": {
+      "x": 398,
+      "y": 259
+    }
+  },
+  {
+    "id": "miigunner",
+    "file": "characters/miigunner_00.png",
+    "focus": {
+      "x": 336,
+      "y": 274
+    }
+  },
+  {
+    "id": "miiswordsman",
+    "file": "characters/miiswordsman_00.png",
+    "focus": {
+      "x": 582,
+      "y": 349
+    }
+  },
+  {
+    "id": "murabito",
+    "file": "characters/murabito_00.png",
+    "focus": {
+      "x": 393,
+      "y": 291
+    }
+  },
+  {
+    "id": "ness",
+    "file": "characters/ness_00.png",
+    "focus": {
+      "x": 296,
+      "y": 251
+    }
+  },
+  {
+    "id": "packun",
+    "file": "characters/packun_00.png",
+    "focus": {
+      "x": 643,
+      "y": 232
+    }
+  },
+  {
+    "id": "pacman",
+    "file": "characters/pacman_00.png",
+    "focus": {
+      "x": 363,
+      "y": 328
+    }
+  },
+  {
+    "id": "palutena",
+    "file": "characters/palutena_00.png",
+    "focus": {
+      "x": 1020,
+      "y": 526
+    }
+  },
+  {
+    "id": "peach",
+    "file": "characters/peach_00.png",
+    "focus": {
+      "x": 467,
+      "y": 585
+    }
+  },
+  {
+    "id": "pichu",
+    "file": "characters/pichu_00.png",
+    "focus": {
+      "x": 361,
+      "y": 377
+    }
+  },
+  {
+    "id": "pickel",
+    "file": "characters/pickel_00.png",
+    "focus": {
+      "x": 438,
+      "y": 174
+    }
+  },
+  {
+    "id": "pikachu",
+    "file": "characters/pikachu_00.png",
+    "focus": {
+      "x": 361,
+      "y": 664
+    }
+  },
+  {
+    "id": "pikmin",
+    "file": "characters/pikmin_00.png",
+    "focus": {
+      "x": 374,
+      "y": 324
+    }
+  },
+  {
+    "id": "pit",
+    "file": "characters/pit_00.png",
+    "focus": {
+      "x": 1089,
+      "y": 469
+    }
+  },
+  {
+    "id": "pitb",
+    "file": "characters/pitb_00.png",
+    "focus": {
+      "x": 1140,
+      "y": 540
+    }
+  },
+  {
+    "id": "ptrainer",
+    "file": "characters/ptrainer_00.png",
+    "focus": {
+      "x": 700,
+      "y": 229
+    }
+  },
+  {
+    "id": "purin",
+    "file": "characters/purin_00.png",
+    "focus": {
+      "x": 395,
+      "y": 352
+    }
+  },
+  {
+    "id": "random",
+    "file": "characters/random_00.png",
+    "focus": {
+      "x": 250,
+      "y": 250
+    }
+  },
+  {
+    "id": "reflet",
+    "file": "characters/reflet_00.png",
+    "focus": {
+      "x": 654,
+      "y": 254
+    }
+  },
+  {
+    "id": "richter",
+    "file": "characters/richter_00.png",
+    "focus": {
+      "x": 1720,
+      "y": 1186
+    }
+  },
+  {
+    "id": "ridley",
+    "file": "characters/ridley_00.png",
+    "focus": {
+      "x": 1185,
+      "y": 318
+    }
+  },
+  {
+    "id": "robot",
+    "file": "characters/robot_00.png",
+    "focus": {
+      "x": 501,
+      "y": 178
+    }
+  },
+  {
+    "id": "rockman",
+    "file": "characters/rockman_00.png",
+    "focus": {
+      "x": 847,
+      "y": 298
+    }
+  },
+  {
+    "id": "rosetta",
+    "file": "characters/rosetta_00.png",
+    "focus": {
+      "x": 767,
+      "y": 278
+    }
+  },
+  {
+    "id": "roy",
+    "file": "characters/roy_00.png",
+    "focus": {
+      "x": 1088,
+      "y": 240
+    }
+  },
+  {
+    "id": "ryu",
+    "file": "characters/ryu_00.png",
+    "focus": {
+      "x": 625,
+      "y": 239
+    }
+  },
+  {
+    "id": "samus",
+    "file": "characters/samus_00.png",
+    "focus": {
+      "x": 870,
+      "y": 292
+    }
+  },
+  {
+    "id": "samusd",
+    "file": "characters/samusd_00.png",
+    "focus": {
+      "x": 591,
+      "y": 280
+    }
+  },
+  {
+    "id": "sheik",
+    "file": "characters/sheik_00.png",
+    "focus": {
+      "x": 762,
+      "y": 271
+    }
+  },
+  {
+    "id": "shizue",
+    "file": "characters/shizue_00.png",
+    "focus": {
+      "x": 311,
+      "y": 622
+    }
+  },
+  {
+    "id": "shulk",
+    "file": "characters/shulk_00.png",
+    "focus": {
+      "x": 586,
+      "y": 941
+    }
+  },
+  {
+    "id": "simon",
+    "file": "characters/simon_00.png",
+    "focus": {
+      "x": 1499,
+      "y": 618
+    }
+  },
+  {
+    "id": "snake",
+    "file": "characters/snake_00.png",
+    "focus": {
+      "x": 1238,
+      "y": 205
+    }
+  },
+  {
+    "id": "sonic",
+    "file": "characters/sonic_00.png",
+    "focus": {
+      "x": 756,
+      "y": 432
+    }
+  },
+  {
+    "id": "szerosuit",
+    "file": "characters/szerosuit_00.png",
+    "focus": {
+      "x": 1651,
+      "y": 349
+    }
+  },
+  {
+    "id": "tantan",
+    "file": "characters/tantan_00.png",
+    "focus": {
+      "x": 795,
+      "y": 744
+    }
+  },
+  {
+    "id": "toonlink",
+    "file": "characters/toonlink_00.png",
+    "focus": {
+      "x": 495,
+      "y": 298
+    }
+  },
+  {
+    "id": "trail",
+    "file": "characters/trail_00.png",
+    "focus": {
+      "x": 944,
+      "y": 394
+    }
+  },
+  {
+    "id": "wario",
+    "file": "characters/wario_00.png",
+    "focus": {
+      "x": 612,
+      "y": 160
+    }
+  },
+  {
+    "id": "wiifit",
+    "file": "characters/wiifit_00.png",
+    "focus": {
+      "x": 605,
+      "y": 837
+    }
+  },
+  {
+    "id": "wolf",
+    "file": "characters/wolf_00.png",
+    "focus": {
+      "x": 545,
+      "y": 338
+    }
+  },
+  {
+    "id": "yoshi",
+    "file": "characters/yoshi_00.png",
+    "focus": {
+      "x": 654,
+      "y": 350
+    }
+  },
+  {
+    "id": "younglink",
+    "file": "characters/younglink_00.png",
+    "focus": {
+      "x": 513,
+      "y": 410
+    }
+  },
+  {
+    "id": "zelda",
+    "file": "characters/zelda_00.png",
+    "focus": {
+      "x": 1022,
+      "y": 226
+    }
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "name": "tenkai-classes",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "prestart": "node scripts/gen-characters.mjs",
+    "start": "npx serve public",
+    "regen": "node scripts/gen-characters.mjs"
+  }
+}

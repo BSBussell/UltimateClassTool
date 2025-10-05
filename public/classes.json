@@ -1,0 +1,9 @@
+{
+  "All": [],
+  "Grunklies": ["miifighter", "ike", "shulk", "mariod", "miiswordsman", "inkling", "luigi", "lucina", "kamui"],
+  "Zoner": ["samus", "szerosuit", "link", "younglink", "toonlink", "palutena", "peach", "daisy"],
+  "Rushdown": ["fox", "falco", "pikachu", "pichu", "sonic", "inkling"],
+  "Heavy": ["ganon", "krool", "dedede", "wario", "ridley", "gaogaen", "koopa"],
+  "Sword": ["marth", "lucina", "ike", "shulk", "cloud", "chrom", "roy", "kamui"],
+  "Weird": ["gamewatch", "duckhunt", "ice_climber", "robot", "rosetta", "purin", "pikmin", "packun", "random"]
+}

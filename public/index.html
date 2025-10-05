@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smash Class Selector</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="top-bar" role="banner">
+      <h1 id="app-title">Ultimate Class Tool</h1>
+    </header>
+
+    <main class="app" aria-labelledby="app-title">
+      <section class="result" aria-label="Roll result">
+        <!-- <h2 class="section-title">Result</h2> -->
+        <div id="result" class="result-card" aria-live="polite"></div>
+      </section>
+
+      <div class="controls" role="region" aria-label="Class controls">
+        <button id="rollBtn" class="primary-btn" type="button">Roll</button>
+        <label class="control-group" for="classSelect">
+          <span class="control-label">Class</span>
+          <select id="classSelect" name="classSelect" aria-controls="previewGrid"></select>
+        </label>
+      </div>
+
+      <div id="noticeBar" class="notice" aria-live="polite" role="status" hidden></div>
+
+      <section id="custom-class-editor" class="custom-class-editor" hidden aria-label="Custom class builder">
+        <!-- TODO: Implement custom class editor UI -->
+      </section>
+
+      <section class="preview" aria-label="Class preview">
+        <h2 class="section-title">Class Preview</h2>
+        <div id="previewGrid" class="preview-grid" role="list"></div>
+      </section>
+    </main>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
