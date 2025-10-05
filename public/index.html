@@ -13,7 +13,6 @@
 
     <main class="app" aria-labelledby="app-title">
       <section class="result" aria-label="Roll result">
-        <!-- <h2 class="section-title">Result</h2> -->
         <div id="result" class="result-card" aria-live="polite"></div>
       </section>
 
@@ -23,12 +22,28 @@
           <span class="control-label">Class</span>
           <select id="classSelect" name="classSelect" aria-controls="previewGrid"></select>
         </label>
+        <div class="controls-meta">
+          <button id="customClassBtn" class="primary-btn" type="button">Custom Class</button>
+          <button id="deleteCustomBtn" class="danger-btn" type="button" hidden>Delete Custom Class</button>
+        </div>
       </div>
 
       <div id="noticeBar" class="notice" aria-live="polite" role="status" hidden></div>
 
       <section id="custom-class-editor" class="custom-class-editor" hidden aria-label="Custom class builder">
-        <!-- TODO: Implement custom class editor UI -->
+        <div class="editor-inner">
+          <h2 class="section-title">Custom Class Builder</h2>
+          <p class="editor-instructions">Select fighters to build a custom pool, then name and save it.</p>
+          <div id="customGrid" class="custom-grid" role="list"></div>
+          <div class="editor-footer">
+            <label class="editor-label" for="customName">Class Name</label>
+            <input id="customName" name="customName" type="text" placeholder="Enter class name" autocomplete="off" />
+            <div class="editor-actions">
+              <button id="saveCustomBtn" class="primary-btn" type="button">Save Custom Class</button>
+              <button id="cancelCustomBtn" class="secondary-btn" type="button">Cancel</button>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section class="preview" aria-label="Class preview">

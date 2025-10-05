@@ -128,11 +128,17 @@ select:focus {
   border-color: var(--color-accent);
 }
 
+#rollBtn {
+  font-size: clamp(20px, 3vw, 28px);
+  padding: var(--space-4) var(--space-6);
+  min-height: 72px;
+  width: min(100%, 360px);
+}
+
 .primary-btn {
   background: var(--color-accent);
   border-color: var(--color-accent);
   color: var(--color-accent-ink);
-  width: min(100%, var(--button-max-width));
   box-shadow: var(--shadow-2);
 }
 
@@ -142,6 +148,42 @@ select:focus {
 }
 
 .primary-btn:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-1);
+}
+
+.secondary-btn {
+  background: var(--color-surface);
+  border-color: var(--color-text);
+  color: var(--color-text);
+  box-shadow: var(--shadow-1);
+}
+
+.secondary-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-2);
+}
+
+.secondary-btn:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-1);
+}
+
+.danger-btn {
+  background: transparent;
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  box-shadow: var(--shadow-1);
+}
+
+.danger-btn:hover {
+  background: var(--color-accent);
+  color: var(--color-accent-ink);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-2);
+}
+
+.danger-btn:active {
   transform: translateY(0);
   box-shadow: var(--shadow-1);
 }
@@ -209,6 +251,43 @@ select:focus {
   box-shadow: var(--shadow-3);
 }
 
+.custom-grid {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(auto-fill, minmax(var(--preview-tile-min), 1fr));
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: var(--space-2);
+  scroll-behavior: smooth;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+}
+
+.custom-grid .preview-item {
+  cursor: pointer;
+  transition: transform var(--dur-fast) var(--easing-snap), filter var(--dur-fast), opacity var(--dur-fast);
+}
+
+.custom-grid .preview-item:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.custom-grid .preview-item--inactive {
+  filter: grayscale(1) saturate(0.5) brightness(0.7);
+  opacity: 0.55;
+}
+
+.custom-grid .preview-item--inactive::before {
+  opacity: 0;
+}
+
+.custom-preview-item {
+  min-height: var(--preview-tile-min);
+}
+
+
 .portrait-frame {
   position: relative;
   width: 100%;
@@ -216,6 +295,7 @@ select:focus {
   border-radius: calc(var(--preview-radius) - var(--space-1));
   overflow: hidden;
   border: 1px solid var(--color-line);
+  background: #000000;
 }
 
 .portrait-frame .portrait {
@@ -333,10 +413,77 @@ select:focus {
 }
 
 .custom-class-editor {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px dashed var(--color-line-inverse);
-  padding: var(--space-4);
-  border-radius: var(--radius-1);
+  background: rgba(0, 0, 0, 0.45);
+  border: 2px solid var(--color-line-inverse);
+  border-radius: var(--radius-2);
+  padding: var(--space-5);
+  margin: 0;
+  margin-top: var(--space-4);
+}
+
+.custom-class-editor[hidden] {
+  display: none !important;
+}
+
+.custom-class-editor:not([hidden]) {
+  display: block;
+}
+
+.editor-inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.editor-footer {
+  display: grid;
+  gap: var(--space-3);
+  padding-top: var(--space-3);
+}
+
+.editor-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.editor-actions .primary-btn,
+.editor-actions .secondary-btn {
+  min-width: 180px;
+}
+
+#customName {
+  width: 100%;
+  padding: var(--space-2);
+}
+
+.custom-grid {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(auto-fill, minmax(var(--preview-tile-min), 1fr));
+}
+
+.custom-grid .preview-item {
+  cursor: pointer;
+  transition: transform var(--dur-fast) var(--easing-snap), filter var(--dur-fast), opacity var(--dur-fast);
+}
+
+.custom-grid .preview-item:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.custom-grid .preview-item--inactive {
+  filter: grayscale(1) saturate(0.5) brightness(0.7);
+  opacity: 0.55;
+}
+
+.custom-grid .preview-item--inactive::before {
+  opacity: 0;
+}
+
+.custom-preview-item {
+  min-height: var(--preview-tile-min);
 }
 
 .preview-empty {
@@ -353,34 +500,34 @@ select:focus {
 @keyframes hinge-in {
   0% {
     opacity: 0;
-    transform: rotateX(70deg) translateY(36px) scaleY(0.98);
+    transform: rotateX(45deg) translateY(24px) scale(0.97);
     box-shadow: var(--shadow-1);
   }
   55% {
     opacity: 1;
-    transform: rotateX(-8deg) translateY(-6px) scaleY(1.02);
-    box-shadow: var(--shadow-3);
+    transform: rotateX(-3deg) translateY(-2px) scale(1.01);
+    box-shadow: var(--shadow-2);
   }
   80% {
-    transform: rotateX(4deg) translateY(3px) scaleY(0.99);
+    transform: rotateX(1.5deg) translateY(1px) scale(0.995);
     box-shadow: var(--shadow-2);
   }
   100% {
     opacity: 1;
-    transform: rotateX(0deg) translateY(0) scaleY(1);
+    transform: rotateX(0deg) translateY(0) scale(1);
     box-shadow: var(--shadow-3);
   }
 }
 
 @keyframes hinge-portrait {
   0% {
-    transform: scale(calc(var(--portrait-scale-hero, 1.08) * 1.08)) rotateX(18deg);
+    transform: scale(calc(var(--portrait-scale-hero, 1.08) * 1.04)) rotateX(10deg);
   }
   55% {
-    transform: scale(calc(var(--portrait-scale-hero, 1.08) * 1.02)) rotateX(-6deg);
+    transform: scale(calc(var(--portrait-scale-hero, 1.08) * 1.01)) rotateX(-3deg);
   }
   80% {
-    transform: scale(calc(var(--portrait-scale-hero, 1.08) * 0.99)) rotateX(3deg);
+    transform: scale(calc(var(--portrait-scale-hero, 1.08) * 0.995)) rotateX(1.5deg);
   }
   100% {
     transform: scale(var(--portrait-scale-hero, 1.08)) rotateX(0deg);
@@ -389,13 +536,13 @@ select:focus {
 
 @keyframes hero-drop {
   0% {
-    transform: translateZ(55px) translateY(-24px) rotate(-8deg);
+    transform: translateZ(32px) translateY(-18px) rotate(-4deg);
   }
   55% {
-    transform: translateZ(-12px) translateY(6px) rotate(5deg);
+    transform: translateZ(-10px) translateY(4px) rotate(3deg);
   }
   80% {
-    transform: translateZ(6px) translateY(-3px) rotate(-2deg);
+    transform: translateZ(4px) translateY(-2px) rotate(-1deg);
   }
   100% {
     transform: translateZ(0) translateY(0) rotate(0deg);
@@ -405,14 +552,14 @@ select:focus {
 @keyframes hinge-text {
   0% {
     opacity: 0;
-    transform: translateY(18px);
+    transform: translateY(14px);
   }
   55% {
     opacity: 1;
-    transform: translateY(-4px);
+    transform: translateY(-3px);
   }
   80% {
-    transform: translateY(2px);
+    transform: translateY(1px);
   }
   100% {
     opacity: 1;
@@ -461,5 +608,19 @@ select:focus {
   .controls,
   .result-card {
     padding: var(--space-4);
+  }
+
+  .editor-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-2);
+  }
+
+  .editor-footer {
+    gap: var(--space-2);
+  }
+
+  .controls-meta {
+    justify-content: center;
   }
 }

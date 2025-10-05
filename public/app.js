@@ -1,11 +1,15 @@
+const LS_KEY = 'smash.customClasses.v1';
+
 const state = {
-  characters: [],
+  allChars: [],
   characterMap: new Map(),
-  classes: {},
+  builtinClasses: {},
+  customClasses: {},
   selectedClass: 'All',
   lastRolled: null,
   missingForSelection: [],
-  customSelection: null,
+  customMode: false,
+  customSelection: new Set(),
 };
 
 const classSelectEl = document.getElementById('classSelect');
@@ -13,6 +17,13 @@ const rollBtn = document.getElementById('rollBtn');
 const previewGridEl = document.getElementById('previewGrid');
 const resultEl = document.getElementById('result');
 const noticeBarEl = document.getElementById('noticeBar');
+const customBtnEl = document.getElementById('customClassBtn');
+const deleteCustomBtnEl = document.getElementById('deleteCustomBtn');
+const customEditorEl = document.getElementById('custom-class-editor');
+const customGridEl = document.getElementById('customGrid');
+const customNameInput = document.getElementById('customName');
+const saveCustomBtn = document.getElementById('saveCustomBtn');
+const cancelCustomBtn = document.getElementById('cancelCustomBtn');
 
 window.addEventListener('DOMContentLoaded', () => {
   initializeApp().catch((error) => {
@@ -23,32 +34,53 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 async function initializeApp() {
-  rollBtn.disabled = true;
+  if (rollBtn) {
+    rollBtn.disabled = true;
+  }
   renderResult(null, { message: 'Choose a class and press roll.' });
-  await loadData();
-  populateClassSelect();
-  setClass(state.selectedClass);
-  rollBtn.disabled = false;
 
-  classSelectEl.addEventListener('change', (event) => {
+  await loadData();
+  refreshClassDropdown();
+  setClass(state.selectedClass);
+
+  if (rollBtn) {
+    rollBtn.disabled = false;
+    rollBtn.addEventListener('click', roll);
+    rollBtn.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        roll();
+      }
+    });
+  }
+
+  classSelectEl?.addEventListener('change', (event) => {
     setClass(event.target.value);
   });
 
-  rollBtn.addEventListener('click', () => {
-    roll();
-  });
-
-  rollBtn.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault();
+  window.addEventListener('keydown', (event) => {
+    if (event.key && event.key.toLowerCase() === 'r' && !state.customMode) {
+      rollBtn?.focus({ preventScroll: true });
       roll();
     }
   });
 
-  window.addEventListener('keydown', (event) => {
-    if (event.key.toLowerCase() === 'r') {
-      rollBtn.focus({ preventScroll: true });
-      roll();
+  customBtnEl?.addEventListener('click', handleCustomButton);
+  deleteCustomBtnEl?.addEventListener('click', () => deleteCustomClass(state.selectedClass));
+  saveCustomBtn?.addEventListener('click', saveCustomClass);
+  cancelCustomBtn?.addEventListener('click', () => {
+    exitCustomMode();
+    customBtnEl?.focus({ preventScroll: true });
+  });
+  customNameInput?.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      saveCustomClass();
+    }
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      exitCustomMode();
+      customBtnEl?.focus({ preventScroll: true });
     }
   });
 }
@@ -63,88 +95,167 @@ export async function loadData() {
     throw new Error('characters.json must be an array');
   }
 
-  state.characters = characters;
-  state.characterMap = new Map(characters.map((entry) => [entry.id, entry]));
-  state.classes = classes ?? {};
-
-  if (!state.classes.All) {
-    state.classes = { All: [], ...state.classes };
+  state.allChars = characters.slice();
+  state.characterMap = new Map(state.allChars.map((entry) => [entry.id, entry]));
+  state.builtinClasses = classes ?? {};
+  if (!state.builtinClasses.All) {
+    state.builtinClasses.All = [];
   }
 
-  return { characters, classes };
+  loadCustomClasses();
+  state.selectedClass = 'All';
+}
+
+function loadCustomClasses() {
+  try {
+    const raw = localStorage.getItem(LS_KEY);
+    if (!raw) {
+      state.customClasses = {};
+      return;
+    }
+    const parsed = JSON.parse(raw);
+    if (!parsed || typeof parsed !== 'object') {
+      state.customClasses = {};
+      return;
+    }
+    const cleaned = {};
+    for (const [name, ids] of Object.entries(parsed)) {
+      if (Array.isArray(ids)) {
+        cleaned[name] = ids.filter((id) => typeof id === 'string');
+      }
+    }
+    state.customClasses = cleaned;
+  } catch (error) {
+    console.warn('Failed to read custom classes, clearing storage.', error);
+    state.customClasses = {};
+  }
+}
+
+function saveCustomClasses() {
+  try {
+    localStorage.setItem(LS_KEY, JSON.stringify(state.customClasses));
+  } catch (error) {
+    console.warn('Failed to save custom classes.', error);
+  }
+}
+
+function refreshClassDropdown() {
+  if (!classSelectEl) return;
+  const names = getAllClassNames();
+  if (!names.includes(state.selectedClass)) {
+    state.selectedClass = 'All';
+  }
+
+  classSelectEl.innerHTML = '';
+  for (const name of names) {
+    const option = document.createElement('option');
+    option.value = name;
+    option.textContent = name;
+    classSelectEl.appendChild(option);
+  }
+  classSelectEl.value = state.selectedClass;
+  updateCustomButtonState();
+}
+
+function getAllClassNames() {
+  const names = new Set(['All']);
+  Object.keys(state.builtinClasses || {}).forEach((name) => {
+    if (name && name !== 'All') {
+      names.add(name);
+    }
+  });
+  Object.keys(state.customClasses || {}).forEach((name) => {
+    if (name) {
+      names.add(name);
+    }
+  });
+  return Array.from(names).sort((a, b) => {
+    if (a === 'All') return -1;
+    if (b === 'All') return 1;
+    return a.localeCompare(b);
+  });
 }
 
 export function setClass(name) {
-  state.selectedClass = name;
-  classSelectEl.value = name;
-  state.missingForSelection = [];
+  const available = getAllClassNames();
+  const target = available.includes(name) ? name : 'All';
+  state.selectedClass = target;
+  if (classSelectEl) {
+    classSelectEl.value = target;
+  }
+  updateCustomButtonState();
+  updatePoolAndGrid();
+}
 
-  const pool = getPool();
+function updatePoolAndGrid() {
+  const { pool, missing } = resolvePool(state.selectedClass);
+  state.missingForSelection = missing;
+
   renderPreviewGrid(pool);
 
-  const shouldKeepRoll = state.lastRolled && pool.includes(state.lastRolled);
-  renderResult(shouldKeepRoll ? state.lastRolled : null, {
+  const stillValid = state.lastRolled && pool.some((fighter) => fighter.id === state.lastRolled.id);
+  renderResult(stillValid ? state.lastRolled : null, {
     message: pool.length ? 'Press roll to pick a fighter.' : 'No fighters available.',
   });
 
-  if (!shouldKeepRoll) {
+  if (!stillValid) {
     state.lastRolled = null;
   }
 
-  if (state.missingForSelection.length) {
-    const humanized = state.missingForSelection.map(humanizeId).join(', ');
+  if (missing.length) {
+    const humanized = missing.map(humanizeId).join(', ');
     showNotice(`Missing portraits for: ${humanized}`);
   } else {
     hideNotice();
   }
 }
 
-export function getPool() {
-  const customPool = getCustomClassPool();
-  if (Array.isArray(customPool)) {
-    return customPool;
-  }
-
-  if (!state.classes || !Object.keys(state.classes).length) {
-    return state.characters;
-  }
-
-  const classMembers = state.classes[state.selectedClass];
-  if (!classMembers || state.selectedClass === 'All' || classMembers.length === 0) {
-    return state.characters;
-  }
-
-  const pool = [];
-  const missing = [];
-
-  for (const id of classMembers) {
-    const character = state.characterMap.get(id);
-    if (character) {
-      pool.push(character);
-    } else {
-      missing.push(id);
-    }
-  }
-
-  state.missingForSelection = missing;
-  return pool;
-}
-
 export function roll() {
-  const pool = getPool();
+  const { pool } = resolvePool(state.selectedClass);
   if (!pool.length) {
     state.lastRolled = null;
     renderResult(null, { message: 'No fighters available in this pool.' });
     return;
   }
 
-  const randomIndex = Math.floor(Math.random() * pool.length);
-  const character = pool[randomIndex];
-  state.lastRolled = character;
-  renderResult(character);
+  const pick = pool[Math.floor(Math.random() * pool.length)];
+  state.lastRolled = pick;
+  renderResult(pick);
+}
+
+function resolvePool(className) {
+  if (!className || className === 'All') {
+    return { pool: state.allChars.slice(), missing: [] };
+  }
+
+  let ids = [];
+  if (state.customClasses[className]) {
+    ids = state.customClasses[className];
+  } else if (state.builtinClasses[className]) {
+    ids = state.builtinClasses[className];
+  }
+
+  if (!Array.isArray(ids) || !ids.length) {
+    return { pool: state.allChars.slice(), missing: [] };
+  }
+
+  const pool = [];
+  const missing = [];
+
+  for (const id of ids) {
+    const entry = state.characterMap.get(id);
+    if (entry) {
+      pool.push(entry);
+    } else {
+      missing.push(id);
+    }
+  }
+
+  return { pool, missing };
 }
 
 export function renderPreviewGrid(pool) {
+  if (!previewGridEl) return;
   previewGridEl.innerHTML = '';
 
   if (!pool.length) {
@@ -173,6 +284,7 @@ export function renderPreviewGrid(pool) {
 
 export function renderResult(character, options = {}) {
   const { message } = options;
+  if (!resultEl) return;
   resultEl.className = 'result-card';
   resultEl.innerHTML = '';
 
@@ -226,35 +338,14 @@ export function humanizeId(id) {
     .join(' ');
 }
 
-function populateClassSelect() {
-  const classNames = Object.keys(state.classes)
-    .filter(Boolean)
-    .sort((a, b) => {
-      if (a === 'All') return -1;
-      if (b === 'All') return 1;
-      return a.localeCompare(b);
-    });
-
-  classSelectEl.innerHTML = '';
-
-  for (const className of classNames) {
-    const option = document.createElement('option');
-    option.value = className;
-    option.textContent = className;
-    if (className === state.selectedClass) {
-      option.selected = true;
-    }
-    classSelectEl.appendChild(option);
-  }
-}
-
-
 function showNotice(message) {
+  if (!noticeBarEl) return;
   noticeBarEl.hidden = false;
   noticeBarEl.textContent = message;
 }
 
 function hideNotice() {
+  if (!noticeBarEl) return;
   noticeBarEl.hidden = true;
   noticeBarEl.textContent = '';
 }
@@ -342,7 +433,174 @@ function clamp(value, min, max) {
   return Math.min(Math.max(value, min), max);
 }
 
-function getCustomClassPool() {
-  // TODO: return an array of characters when a custom class selection is active.
-  return null;
+function handleCustomButton() {
+  if (state.customMode) {
+    exitCustomMode();
+    return;
+  }
+
+  enterCustomMode();
+}
+
+
+function isCustomClass(name) {
+  return !!state.customClasses[name];
+}
+
+function enterCustomMode() {
+  if (!customEditorEl || !customGridEl) return;
+  state.customMode = true;
+  state.customSelection = new Set();
+  customEditorEl.hidden = false;
+  renderCustomGrid();
+  if (customGridEl) {
+    if (typeof customGridEl.scrollTo === 'function') {
+      customGridEl.scrollTo({ top: 0 });
+    } else {
+      customGridEl.scrollTop = 0;
+    }
+  }
+  if (customNameInput) {
+    customNameInput.value = '';
+    customNameInput.focus();
+  }
+  updateCustomButtonState();
+}
+
+function exitCustomMode() {
+  if (!state.customMode) return;
+  state.customMode = false;
+  state.customSelection = new Set();
+  if (customEditorEl) {
+    customEditorEl.hidden = true;
+  }
+  if (customNameInput) {
+    customNameInput.value = '';
+  }
+  updateCustomButtonState();
+}
+
+function renderCustomGrid() {
+  if (!customGridEl) return;
+  customGridEl.innerHTML = '';
+
+  for (const character of state.allChars) {
+    const selected = state.customSelection.has(character.id);
+    const tile = document.createElement('div');
+    tile.className = 'preview-item custom-preview-item';
+    if (!selected) {
+      tile.classList.add('preview-item--inactive');
+    }
+    tile.dataset.id = character.id;
+    tile.tabIndex = 0;
+    tile.setAttribute('role', 'button');
+    tile.setAttribute('aria-pressed', String(selected));
+
+    const portrait = createPortrait(character, {
+      loading: 'lazy',
+      scale: 1.28,
+      classes: ['preview'],
+    });
+
+    tile.appendChild(portrait);
+
+    tile.addEventListener('click', () => toggleCustomPick(character.id, tile));
+    tile.addEventListener('keydown', (event) => {
+      if (event.key === ' ' || event.key === 'Enter') {
+        event.preventDefault();
+        toggleCustomPick(character.id, tile);
+      }
+    });
+
+    customGridEl.appendChild(tile);
+  }
+}
+
+function toggleCustomPick(id, tileEl) {
+  const isSelected = state.customSelection.has(id);
+  if (isSelected) {
+    state.customSelection.delete(id);
+    tileEl.classList.add('preview-item--inactive');
+    tileEl.setAttribute('aria-pressed', 'false');
+  } else {
+    state.customSelection.add(id);
+    tileEl.classList.remove('preview-item--inactive');
+    tileEl.setAttribute('aria-pressed', 'true');
+  }
+}
+
+function saveCustomClass() {
+  if (!customEditorEl) return;
+  const name = (customNameInput?.value || '').trim();
+  if (!name) {
+    alert('Please enter a class name.');
+    return;
+  }
+  if (state.customSelection.size === 0) {
+    alert('Select at least one fighter.');
+    return;
+  }
+
+  if (state.builtinClasses[name]) {
+    const ok = confirm(`A built-in class named "${name}" exists. Save as "${name} (Custom)" instead?`);
+    if (!ok) return;
+    saveSelectionAs(`${name} (Custom)`);
+    return;
+  }
+
+  if (state.customClasses[name]) {
+    const overwrite = confirm(`Overwrite existing custom class "${name}"?`);
+    if (!overwrite) return;
+  }
+
+  saveSelectionAs(name);
+}
+
+function saveSelectionAs(name) {
+  state.customClasses[name] = Array.from(state.customSelection);
+  saveCustomClasses();
+  exitCustomMode();
+  refreshClassDropdown();
+  setClass(name);
+}
+
+function deleteCustomClass(name) {
+  if (!isCustomClass(name)) return;
+  const ok = confirm(`Delete custom class "${name}"?`);
+  if (!ok) return;
+  delete state.customClasses[name];
+  saveCustomClasses();
+  if (state.customMode) {
+    exitCustomMode();
+  }
+  refreshClassDropdown();
+  setClass('All');
+}
+
+function updateCustomButtonState() {
+  const isCustom = isCustomClass(state.selectedClass);
+  const showDelete = isCustom && !state.customMode;
+  const showCustomButton = !isCustom || state.customMode;
+
+  if (customBtnEl) {
+    customBtnEl.classList.remove('primary-btn', 'secondary-btn');
+    customBtnEl.toggleAttribute('hidden', !showCustomButton);
+
+    if (state.customMode) {
+      customBtnEl.textContent = 'Cancel Custom Mode';
+      customBtnEl.classList.add('secondary-btn');
+    } else {
+      customBtnEl.textContent = 'Custom Class';
+      customBtnEl.classList.add('primary-btn');
+    }
+  }
+
+  if (deleteCustomBtnEl) {
+    deleteCustomBtnEl.toggleAttribute('hidden', !showDelete);
+    if (showDelete) {
+      deleteCustomBtnEl.removeAttribute('disabled');
+    } else {
+      deleteCustomBtnEl.setAttribute('disabled', 'disabled');
+    }
+  }
 }
