@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "prestart": "node scripts/gen-characters.mjs",
-    "start": "npx serve public",
+    "start": "npx serve",
     "regen": "node scripts/gen-characters.mjs"
   }
 }

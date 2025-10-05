@@ -5,13 +5,27 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const projectRoot = path.resolve(__dirname, '..');
-const charactersDir = path.join(projectRoot, 'public', 'characters');
-const outputPath = path.join(projectRoot, 'public', 'characters.json');
+const characterDirCandidates = [
+  path.join(projectRoot, 'characters'),
+  path.join(projectRoot, 'public', 'characters'),
+];
+let charactersDir = null;
+let outputPath = null;
 const configPath = path.join(projectRoot, 'mural_art', 'config.json');
 
 const FILENAME_PATTERN = /^(?<id>[a-z0-9_]+)_00\.png$/i;
 
 async function main() {
+  const resolvedDir = await resolveCharactersDir();
+  if (!resolvedDir) {
+    console.error('characters directory not found. Ensure a "characters" folder exists either at the project root or under public/.');
+    process.exitCode = 1;
+    return;
+  }
+
+  charactersDir = resolvedDir;
+  outputPath = path.join(path.dirname(charactersDir), 'characters.json');
+
   const { eyesights, warnings } = await loadEyesightData();
   const missingFocus = new Set();
 
@@ -49,13 +63,29 @@ async function main() {
       console.warn(`Missing eyesight data for: ${Array.from(missingFocus).join(', ')}`);
     }
   } catch (error) {
-    if (error.code === 'ENOENT') {
-      console.error('characters directory not found. Ensure public/characters exists.');
+    if (error.code === 'ENOENT' && error.path === charactersDir) {
+      console.error('characters directory not found. Ensure a "characters" folder exists either at the project root or under public/.');
       process.exitCode = 1;
       return;
     }
     throw error;
   }
+}
+
+async function resolveCharactersDir() {
+  for (const candidate of characterDirCandidates) {
+    try {
+      const stats = await fs.stat(candidate);
+      if (stats.isDirectory()) {
+        return candidate;
+      }
+    } catch (error) {
+      if (error.code !== 'ENOENT') {
+        throw error;
+      }
+    }
+  }
+  return null;
 }
 
 function getFocusPoint(eyesights, id) {
