@@ -1,10 +1,10 @@
 {
   "All": [],
-  "Grunklies": ["miifighter", "ike", "shulk", "mariod", "miiswordsman", "inkling", "luigi", "lucina", "kamui", "pitb", "pit", "ice_climber", "pichu", "richter", "cloud", "wolf", "eflame", "fox"],
-  "The Tricksters": ["shizue", "duckhunt", "diddy", "peach", "link", "snake", "pikmin", "miigunner", "sheik", "reflet", "rockman", "edge", "ptrainer", "mewtwo", "kirby", "wiifit", "palutena", "murabito", "dedede", "krool", "younglink", "master", "toonlink"],
+  "Grunklies": ["miifighter", "ike", "shulk", "mariod", "miiswordsman", "pikmin", "inkling", "luigi", "lucina", "kamui", "pitb", "pit", "ice_climber", "pichu", "richter", "cloud", "wolf", "eflame", "fox", "toonlink"],
+  "The Tricksters": ["diddy", "peach", "link", "sheik", "reflet", "rockman", "edge", "ptrainer", "mewtwo", "wiifit", "palutena", "murabito", "dedede", "krool", "younglink", "master"],
   "Acrobats": ["gekkouga", "purin", "pikachu", "pacman", "robot", "bayonetta", "szerosuit", "yoshi", "metaknight", "gamewatch"],
-  "Combo Gimp Johnson": ["chrom", "captain", "wario", "marth", "roy", "falco", "mario", "jack"],
-  "Weird": ["trail", "buddy", "tantan", "packun", "zelda", "rosetta", "lucario", "koopajr", "sonic", "random"],
-  "Fighties": ["dolly", "demon", "ken", "ryu", "littlemac", "donkey", "koopa", "gaogaen", "ganon", "ridley"]
+  "Combo Gimp Johnson": ["chrom", "captain", "wario", "marth", "kirby", "roy", "falco", "mario", "jack"],
+  "Weird": ["trail", "buddy", "tantan", "packun", "duckhunt", "zelda", "rosetta", "lucario", "koopajr", "sonic", "miigunner",  "random"],
+  "Fighties": ["ken", "littlemac", "donkey", "koopa", "ganon", "ridley"]
   
 }

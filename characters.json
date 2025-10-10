@@ -1,698 +1,350 @@
 [
   {
     "id": "bayonetta",
-    "file": "characters/bayonetta_00.png",
-    "focus": {
-      "x": 965,
-      "y": 458
-    }
+    "file": "characters/bayonetta_00.png"
   },
   {
     "id": "brave",
-    "file": "characters/brave_00.png",
-    "focus": {
-      "x": 574,
-      "y": 521
-    }
+    "file": "characters/brave_00.png"
   },
   {
     "id": "buddy",
-    "file": "characters/buddy_00.png",
-    "focus": {
-      "x": 443,
-      "y": 651
-    }
+    "file": "characters/buddy_00.png"
   },
   {
     "id": "captain",
-    "file": "characters/captain_00.png",
-    "focus": {
-      "x": 1026,
-      "y": 236
-    }
+    "file": "characters/captain_00.png"
   },
   {
     "id": "chrom",
-    "file": "characters/chrom_00.png",
-    "focus": {
-      "x": 554,
-      "y": 236
-    }
+    "file": "characters/chrom_00.png"
   },
   {
     "id": "cloud",
-    "file": "characters/cloud_00.png",
-    "focus": {
-      "x": 1196,
-      "y": 599
-    }
+    "file": "characters/cloud_00.png"
   },
   {
     "id": "daisy",
-    "file": "characters/daisy_00.png",
-    "focus": {
-      "x": 563,
-      "y": 324
-    }
+    "file": "characters/daisy_00.png"
   },
   {
     "id": "dedede",
-    "file": "characters/dedede_00.png",
-    "focus": {
-      "x": 753,
-      "y": 247
-    }
+    "file": "characters/dedede_00.png"
   },
   {
     "id": "demon",
-    "file": "characters/demon_00.png",
-    "focus": {
-      "x": 482,
-      "y": 168
-    }
+    "file": "characters/demon_00.png"
   },
   {
     "id": "diddy",
-    "file": "characters/diddy_00.png",
-    "focus": {
-      "x": 1060,
-      "y": 330
-    }
+    "file": "characters/diddy_00.png"
   },
   {
     "id": "dolly",
-    "file": "characters/dolly_00.png",
-    "focus": {
-      "x": 843,
-      "y": 232
-    }
+    "file": "characters/dolly_00.png"
   },
   {
     "id": "donkey",
-    "file": "characters/donkey_00.png",
-    "focus": {
-      "x": 927,
-      "y": 810
-    }
+    "file": "characters/donkey_00.png"
   },
   {
     "id": "duckhunt",
-    "file": "characters/duckhunt_00.png",
-    "focus": {
-      "x": 294,
-      "y": 826
-    }
+    "file": "characters/duckhunt_00.png"
   },
   {
     "id": "edge",
-    "file": "characters/edge_00.png",
-    "focus": {
-      "x": 1392,
-      "y": 1583
-    }
+    "file": "characters/edge_00.png"
   },
   {
     "id": "eflame",
-    "file": "characters/eflame_00.png",
-    "focus": {
-      "x": 914,
-      "y": 487
-    }
+    "file": "characters/eflame_00.png"
   },
   {
     "id": "falco",
-    "file": "characters/falco_00.png",
-    "focus": {
-      "x": 1234,
-      "y": 179
-    }
+    "file": "characters/falco_00.png"
   },
   {
     "id": "fox",
-    "file": "characters/fox_00.png",
-    "focus": {
-      "x": 360,
-      "y": 299
-    }
+    "file": "characters/fox_00.png"
   },
   {
     "id": "gamewatch",
-    "file": "characters/gamewatch_00.png",
-    "focus": {
-      "x": 275,
-      "y": 106
-    }
+    "file": "characters/gamewatch_00.png"
   },
   {
     "id": "ganon",
-    "file": "characters/ganon_00.png",
-    "focus": {
-      "x": 1397,
-      "y": 457
-    }
+    "file": "characters/ganon_00.png"
   },
   {
     "id": "gaogaen",
-    "file": "characters/gaogaen_00.png",
-    "focus": {
-      "x": 795,
-      "y": 470
-    }
+    "file": "characters/gaogaen_00.png"
   },
   {
     "id": "gekkouga",
-    "file": "characters/gekkouga_00.png",
-    "focus": {
-      "x": 918,
-      "y": 572
-    }
+    "file": "characters/gekkouga_00.png"
   },
   {
     "id": "ice_climber",
-    "file": "characters/ice_climber_00.png",
-    "focus": {
-      "x": 392,
-      "y": 780
-    }
+    "file": "characters/ice_climber_00.png"
   },
   {
     "id": "ike",
-    "file": "characters/ike_00.png",
-    "focus": {
-      "x": 1063,
-      "y": 400
-    }
+    "file": "characters/ike_00.png"
   },
   {
     "id": "inkling",
-    "file": "characters/inkling_00.png",
-    "focus": {
-      "x": 722,
-      "y": 282
-    }
+    "file": "characters/inkling_00.png"
   },
   {
     "id": "jack",
-    "file": "characters/jack_00.png",
-    "focus": {
-      "x": 1333,
-      "y": 471
-    }
+    "file": "characters/jack_00.png"
   },
   {
     "id": "kamui",
-    "file": "characters/kamui_00.png",
-    "focus": {
-      "x": 508,
-      "y": 269
-    }
+    "file": "characters/kamui_00.png"
   },
   {
     "id": "ken",
-    "file": "characters/ken_00.png",
-    "focus": {
-      "x": 620,
-      "y": 832
-    }
+    "file": "characters/ken_00.png"
   },
   {
     "id": "kirby",
-    "file": "characters/kirby_00.png",
-    "focus": {
-      "x": 412,
-      "y": 152
-    }
+    "file": "characters/kirby_00.png"
   },
   {
     "id": "koopa",
-    "file": "characters/koopa_00.png",
-    "focus": {
-      "x": 993,
-      "y": 538
-    }
+    "file": "characters/koopa_00.png"
   },
   {
     "id": "koopajr",
-    "file": "characters/koopajr_00.png",
-    "focus": {
-      "x": 944,
-      "y": 195
-    }
+    "file": "characters/koopajr_00.png"
   },
   {
     "id": "krool",
-    "file": "characters/krool_00.png",
-    "focus": {
-      "x": 923,
-      "y": 367
-    }
+    "file": "characters/krool_00.png"
   },
   {
     "id": "link",
-    "file": "characters/link_00.png",
-    "focus": {
-      "x": 664,
-      "y": 494
-    }
+    "file": "characters/link_00.png"
   },
   {
     "id": "littlemac",
-    "file": "characters/littlemac_00.png",
-    "focus": {
-      "x": 420,
-      "y": 217
-    }
+    "file": "characters/littlemac_00.png"
   },
   {
     "id": "lucario",
-    "file": "characters/lucario_00.png",
-    "focus": {
-      "x": 638,
-      "y": 371
-    }
+    "file": "characters/lucario_00.png"
   },
   {
     "id": "lucas",
-    "file": "characters/lucas_00.png",
-    "focus": {
-      "x": 246,
-      "y": 315
-    }
+    "file": "characters/lucas_00.png"
   },
   {
     "id": "lucina",
-    "file": "characters/lucina_00.png",
-    "focus": {
-      "x": 1649,
-      "y": 716
-    }
+    "file": "characters/lucina_00.png"
   },
   {
     "id": "luigi",
-    "file": "characters/luigi_00.png",
-    "focus": {
-      "x": 506,
-      "y": 292
-    }
+    "file": "characters/luigi_00.png"
   },
   {
     "id": "mario",
-    "file": "characters/mario_00.png",
-    "focus": {
-      "x": 496,
-      "y": 307
-    }
+    "file": "characters/mario_00.png"
   },
   {
     "id": "mariod",
-    "file": "characters/mariod_00.png",
-    "focus": {
-      "x": 442,
-      "y": 286
-    }
+    "file": "characters/mariod_00.png"
   },
   {
     "id": "marth",
-    "file": "characters/marth_00.png",
-    "focus": {
-      "x": 2002,
-      "y": 260
-    }
+    "file": "characters/marth_00.png"
   },
   {
     "id": "master",
-    "file": "characters/master_00.png",
-    "focus": {
-      "x": 730,
-      "y": 827
-    }
+    "file": "characters/master_00.png"
   },
   {
     "id": "metaknight",
-    "file": "characters/metaknight_00.png",
-    "focus": {
-      "x": 929,
-      "y": 907
-    }
+    "file": "characters/metaknight_00.png"
   },
   {
     "id": "mewtwo",
-    "file": "characters/mewtwo_00.png",
-    "focus": {
-      "x": 1064,
-      "y": 474
-    }
+    "file": "characters/mewtwo_00.png"
   },
   {
     "id": "miifighter",
-    "file": "characters/miifighter_00.png",
-    "focus": {
-      "x": 398,
-      "y": 259
-    }
+    "file": "characters/miifighter_00.png"
   },
   {
     "id": "miigunner",
-    "file": "characters/miigunner_00.png",
-    "focus": {
-      "x": 336,
-      "y": 274
-    }
+    "file": "characters/miigunner_00.png"
   },
   {
     "id": "miiswordsman",
-    "file": "characters/miiswordsman_00.png",
-    "focus": {
-      "x": 582,
-      "y": 349
-    }
+    "file": "characters/miiswordsman_00.png"
   },
   {
     "id": "murabito",
-    "file": "characters/murabito_00.png",
-    "focus": {
-      "x": 393,
-      "y": 291
-    }
+    "file": "characters/murabito_00.png"
   },
   {
     "id": "ness",
-    "file": "characters/ness_00.png",
-    "focus": {
-      "x": 296,
-      "y": 251
-    }
+    "file": "characters/ness_00.png"
   },
   {
     "id": "packun",
-    "file": "characters/packun_00.png",
-    "focus": {
-      "x": 643,
-      "y": 232
-    }
+    "file": "characters/packun_00.png"
   },
   {
     "id": "pacman",
-    "file": "characters/pacman_00.png",
-    "focus": {
-      "x": 363,
-      "y": 328
-    }
+    "file": "characters/pacman_00.png"
   },
   {
     "id": "palutena",
-    "file": "characters/palutena_00.png",
-    "focus": {
-      "x": 1020,
-      "y": 526
-    }
+    "file": "characters/palutena_00.png"
   },
   {
     "id": "peach",
-    "file": "characters/peach_00.png",
-    "focus": {
-      "x": 467,
-      "y": 585
-    }
+    "file": "characters/peach_00.png"
   },
   {
     "id": "pichu",
-    "file": "characters/pichu_00.png",
-    "focus": {
-      "x": 361,
-      "y": 377
-    }
+    "file": "characters/pichu_00.png"
   },
   {
     "id": "pickel",
-    "file": "characters/pickel_00.png",
-    "focus": {
-      "x": 438,
-      "y": 174
-    }
+    "file": "characters/pickel_00.png"
   },
   {
     "id": "pikachu",
-    "file": "characters/pikachu_00.png",
-    "focus": {
-      "x": 361,
-      "y": 664
-    }
+    "file": "characters/pikachu_00.png"
   },
   {
     "id": "pikmin",
-    "file": "characters/pikmin_00.png",
-    "focus": {
-      "x": 374,
-      "y": 324
-    }
+    "file": "characters/pikmin_00.png"
   },
   {
     "id": "pit",
-    "file": "characters/pit_00.png",
-    "focus": {
-      "x": 1089,
-      "y": 469
-    }
+    "file": "characters/pit_00.png"
   },
   {
     "id": "pitb",
-    "file": "characters/pitb_00.png",
-    "focus": {
-      "x": 1140,
-      "y": 540
-    }
+    "file": "characters/pitb_00.png"
   },
   {
     "id": "ptrainer",
-    "file": "characters/ptrainer_00.png",
-    "focus": {
-      "x": 700,
-      "y": 229
-    }
+    "file": "characters/ptrainer_00.png"
   },
   {
     "id": "purin",
-    "file": "characters/purin_00.png",
-    "focus": {
-      "x": 395,
-      "y": 352
-    }
+    "file": "characters/purin_00.png"
   },
   {
     "id": "random",
-    "file": "characters/random_00.png",
-    "focus": {
-      "x": 250,
-      "y": 250
-    }
+    "file": "characters/random_00.png"
   },
   {
     "id": "reflet",
-    "file": "characters/reflet_00.png",
-    "focus": {
-      "x": 654,
-      "y": 254
-    }
+    "file": "characters/reflet_00.png"
   },
   {
     "id": "richter",
-    "file": "characters/richter_00.png",
-    "focus": {
-      "x": 1720,
-      "y": 1186
-    }
+    "file": "characters/richter_00.png"
   },
   {
     "id": "ridley",
-    "file": "characters/ridley_00.png",
-    "focus": {
-      "x": 1185,
-      "y": 318
-    }
+    "file": "characters/ridley_00.png"
   },
   {
     "id": "robot",
-    "file": "characters/robot_00.png",
-    "focus": {
-      "x": 501,
-      "y": 178
-    }
+    "file": "characters/robot_00.png"
   },
   {
     "id": "rockman",
-    "file": "characters/rockman_00.png",
-    "focus": {
-      "x": 847,
-      "y": 298
-    }
+    "file": "characters/rockman_00.png"
   },
   {
     "id": "rosetta",
-    "file": "characters/rosetta_00.png",
-    "focus": {
-      "x": 767,
-      "y": 278
-    }
+    "file": "characters/rosetta_00.png"
   },
   {
     "id": "roy",
-    "file": "characters/roy_00.png",
-    "focus": {
-      "x": 1088,
-      "y": 240
-    }
+    "file": "characters/roy_00.png"
   },
   {
     "id": "ryu",
-    "file": "characters/ryu_00.png",
-    "focus": {
-      "x": 625,
-      "y": 239
-    }
+    "file": "characters/ryu_00.png"
   },
   {
     "id": "samus",
-    "file": "characters/samus_00.png",
-    "focus": {
-      "x": 870,
-      "y": 292
-    }
+    "file": "characters/samus_00.png"
   },
   {
     "id": "samusd",
-    "file": "characters/samusd_00.png",
-    "focus": {
-      "x": 591,
-      "y": 280
-    }
+    "file": "characters/samusd_00.png"
   },
   {
     "id": "sheik",
-    "file": "characters/sheik_00.png",
-    "focus": {
-      "x": 762,
-      "y": 271
-    }
+    "file": "characters/sheik_00.png"
   },
   {
     "id": "shizue",
-    "file": "characters/shizue_00.png",
-    "focus": {
-      "x": 311,
-      "y": 622
-    }
+    "file": "characters/shizue_00.png"
   },
   {
     "id": "shulk",
-    "file": "characters/shulk_00.png",
-    "focus": {
-      "x": 586,
-      "y": 941
-    }
+    "file": "characters/shulk_00.png"
   },
   {
     "id": "simon",
-    "file": "characters/simon_00.png",
-    "focus": {
-      "x": 1499,
-      "y": 618
-    }
+    "file": "characters/simon_00.png"
   },
   {
     "id": "snake",
-    "file": "characters/snake_00.png",
-    "focus": {
-      "x": 1238,
-      "y": 205
-    }
+    "file": "characters/snake_00.png"
   },
   {
     "id": "sonic",
-    "file": "characters/sonic_00.png",
-    "focus": {
-      "x": 756,
-      "y": 432
-    }
+    "file": "characters/sonic_00.png"
   },
   {
     "id": "szerosuit",
-    "file": "characters/szerosuit_00.png",
-    "focus": {
-      "x": 1651,
-      "y": 349
-    }
+    "file": "characters/szerosuit_00.png"
   },
   {
     "id": "tantan",
-    "file": "characters/tantan_00.png",
-    "focus": {
-      "x": 795,
-      "y": 744
-    }
+    "file": "characters/tantan_00.png"
   },
   {
     "id": "toonlink",
-    "file": "characters/toonlink_00.png",
-    "focus": {
-      "x": 495,
-      "y": 298
-    }
+    "file": "characters/toonlink_00.png"
   },
   {
     "id": "trail",
-    "file": "characters/trail_00.png",
-    "focus": {
-      "x": 944,
-      "y": 394
-    }
+    "file": "characters/trail_00.png"
   },
   {
     "id": "wario",
-    "file": "characters/wario_00.png",
-    "focus": {
-      "x": 612,
-      "y": 160
-    }
+    "file": "characters/wario_00.png"
   },
   {
     "id": "wiifit",
-    "file": "characters/wiifit_00.png",
-    "focus": {
-      "x": 605,
-      "y": 837
-    }
+    "file": "characters/wiifit_00.png"
   },
   {
     "id": "wolf",
-    "file": "characters/wolf_00.png",
-    "focus": {
-      "x": 545,
-      "y": 338
-    }
+    "file": "characters/wolf_00.png"
   },
   {
     "id": "yoshi",
-    "file": "characters/yoshi_00.png",
-    "focus": {
-      "x": 654,
-      "y": 350
-    }
+    "file": "characters/yoshi_00.png"
   },
   {
     "id": "younglink",
-    "file": "characters/younglink_00.png",
-    "focus": {
-      "x": 513,
-      "y": 410
-    }
+    "file": "characters/younglink_00.png"
   },
   {
     "id": "zelda",
-    "file": "characters/zelda_00.png",
-    "focus": {
-      "x": 1022,
-      "y": 226
-    }
+    "file": "characters/zelda_00.png"
   }
 ]
