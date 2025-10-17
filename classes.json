@@ -1,10 +1,36 @@
 {
   "All": [],
-  "Grunklies": ["miifighter", "ike", "shulk", "mariod", "miiswordsman", "pikmin", "inkling", "luigi", "lucina", "kamui", "pitb", "pit", "ice_climber", "pichu", "richter", "cloud", "wolf", "eflame", "fox", "toonlink"],
-  "The Tricksters": ["diddy", "peach", "link", "sheik", "reflet", "rockman", "edge", "ptrainer", "mewtwo", "wiifit", "palutena", "murabito", "dedede", "krool", "younglink", "master"],
-  "Acrobats": ["gekkouga", "purin", "pikachu", "pacman", "robot", "bayonetta", "szerosuit", "yoshi", "metaknight", "gamewatch"],
-  "Combo Gimp Johnson": ["chrom", "captain", "wario", "marth", "kirby", "roy", "falco", "mario", "jack"],
-  "Weird": ["trail", "buddy", "tantan", "packun", "duckhunt", "zelda", "rosetta", "lucario", "koopajr", "sonic", "miigunner",  "random"],
-  "Fighties": ["ken", "littlemac", "donkey", "koopa", "ganon", "ridley"]
+  
+  "The Big Ones": [
+    "mario", "donkey", "link", "murabito", "fox", "pikachu", "marth"
+  ],
+  "Anime Dream": [
+    "kamui", "sheik", "palutena", "reflet", "bayonetta", "richter", "jack"
+  ],
+  "Brain Age": [
+    "mariod", "zelda", "mewtwo", "master", "edge", "robot", "lucario", "miiswordsman"
+  ],
+  "Goofballs": [
+    "luigi", "pichu", "buddy", "diddy", "pit", "pacman", "ice_climber", "roy"
+  ],
+  "Time Travelers": [
+    "younglink", "lucina", "shulk", "rockman", "sonic", "brave", "trail"
+  ],
+  "Deviants": [
+    "wario", "koopajr", "dedede", "pitb", "rockman", "wolf", "gamewatch"
+  ],
+  "Older than 10": [
+    "toonlink", "ike", "ptrainer", "pikmin", "inkling", "littlemac", "daisy"
+  ],
+  "The Creatures": [
+    "gekkouga", "yoshi", "duckhunt", "gaogaen", "packun", "ridley", "purin", "metaknight"
+  ],
+  "QUEENS": [
+    "peach", "szerosuit", "tantan", "wiifit", "cloud", "rosetta", "eflame", "miifighter"
+  ],
+  "The Boys": [
+    "koopa", "krool", "captain", "ken", "ganon", "falco", "chrom"
+  ]
+
   
 }
