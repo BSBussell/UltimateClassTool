@@ -135,6 +135,82 @@ select:focus {
   width: min(100%, 360px);
 }
 
+.controls-meta {
+  width: min(100%, var(--button-max-width));
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-2);
+}
+
+.custom-rules {
+  width: min(100%, var(--button-max-width));
+}
+
+.custom-rules[open] {
+  background: var(--color-surface);
+  border: 2px solid var(--color-line-strong);
+  border-radius: var(--radius-0);
+  box-shadow: var(--shadow-1);
+  padding: var(--space-2);
+}
+
+.custom-rules-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+}
+
+.custom-rules[open] .custom-rules-toggle {
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.custom-rules-toggle::marker,
+.custom-rules-toggle::-webkit-details-marker {
+  display: none;
+  content: "";
+}
+
+.custom-rules-toggle::after {
+  content: "▾";
+  font-size: var(--fs-sm);
+  line-height: 1;
+  transition: transform var(--dur-fast) var(--easing-snap);
+}
+
+.custom-rules:not([open]) .custom-rules-toggle::after {
+  transform: rotate(-90deg);
+}
+
+.custom-rules[open] .controls-meta {
+  margin-top: var(--space-2);
+}
+
+.custom-rules-toggle:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.controls-meta > button {
+  width: 100%;
+}
+
+.controls-meta-divider {
+  height: 2px;
+  width: 100%;
+  margin: var(--space-1) 0;
+  background: var(--color-line);
+  opacity: 0.75;
+}
+
+#exportCustomSetBtn {
+  white-space: normal;
+}
+
 .primary-btn {
   background: var(--color-accent);
   border-color: var(--color-accent);
@@ -249,6 +325,15 @@ select:focus {
 .preview-item:focus-within {
   transform: translateY(-2px);
   box-shadow: var(--shadow-3);
+}
+
+.preview-item--selectable {
+  cursor: pointer;
+}
+
+.preview-item--selectable:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
 }
 
 .custom-grid {
@@ -621,6 +706,10 @@ select:focus {
   }
 
   .controls-meta {
-    justify-content: center;
+    width: 100%;
+  }
+
+  .custom-rules {
+    width: 100%;
   }
 }

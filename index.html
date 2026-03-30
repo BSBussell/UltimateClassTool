@@ -28,10 +28,22 @@
           <span class="control-label">Class</span>
           <select id="classSelect" name="classSelect" aria-controls="previewGrid"></select>
         </label>
-        <div class="controls-meta">
-          <button id="customClassBtn" class="primary-btn" type="button">Custom Class</button>
-          <button id="deleteCustomBtn" class="danger-btn" type="button" hidden>Delete Custom Class</button>
-        </div>
+        <label class="control-group" for="classSetSelect">
+          <span class="control-label">Class Set</span>
+          <select id="classSetSelect" name="classSetSelect"></select>
+        </label>
+        <details class="custom-rules" id="customRulesMenu">
+          <summary class="button secondary-btn custom-rules-toggle">Custom Rules</summary>
+          <div class="controls-meta" role="group" aria-label="Custom Rules">
+            <button id="customClassBtn" class="primary-btn" type="button">Create Custom Class</button>
+            <button id="editCustomBtn" class="secondary-btn" type="button" hidden>Edit Custom Class</button>
+            <button id="createCustomSetBtn" class="secondary-btn" type="button">Create Custom Set</button>
+            <button id="exportCustomSetBtn" class="secondary-btn" type="button" hidden>Export Custom Class Set</button>
+            <div id="customRulesDivider" class="controls-meta-divider" hidden aria-hidden="true"></div>
+            <button id="deleteCustomBtn" class="danger-btn" type="button" hidden>Delete Custom Class</button>
+            <button id="deleteCustomSetBtn" class="danger-btn" type="button" hidden>Delete Custom Set</button>
+          </div>
+        </details>
       </div>
 
       <div id="noticeBar" class="notice" aria-live="polite" role="status" hidden></div>
@@ -39,7 +51,7 @@
       <section id="custom-class-editor" class="custom-class-editor" hidden aria-label="Custom class builder">
         <div class="editor-inner">
           <h2 class="section-title">Custom Class Builder</h2>
-          <p class="editor-instructions">Select fighters to build a custom pool, then name and save it.</p>
+          <p class="editor-instructions">Click fighters below to add them here. Click fighters here to remove them.</p>
           <div id="customGrid" class="custom-grid" role="list"></div>
           <div class="editor-footer">
             <label class="editor-label" for="customName">Class Name</label>
@@ -53,7 +65,7 @@
       </section>
 
       <section class="preview" aria-label="Class preview">
-        <h2 class="section-title">Class Preview</h2>
+        <h2 id="previewTitle" class="section-title">Class Preview</h2>
         <div id="previewGrid" class="preview-grid" role="list"></div>
       </section>
     </main>

@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "prestart": "node scripts/gen-characters.mjs",
-    "start": "npx serve",
-    "regen": "node scripts/gen-characters.mjs"
+    
+    "start": "npx serve"
+    
   }
 }
