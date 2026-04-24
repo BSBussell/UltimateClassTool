@@ -4,7 +4,7 @@ Ultimate Class Tool is a lightweight web app for casual Super Smash Bros. Ultima
 
 ## What It Does
 
-- Ships with a handful of pre-made classes ("Grunklies", "Fighties", etc.) so you can roll a fighter immediately.
+- Ships with a handful of pre-made classes ("The Big Ones", "Fighties", etc.) so you can roll a fighter immediately.
 - Select a class from the dropdown filter and then hit "Roll" (or press `R`) to pick a random fighter from that pool.
 - Lets players design their own classes on the fly and store them in the browser via `localStorage`.
 - Exports custom class sets as share links that auto-import when opened.
@@ -16,11 +16,11 @@ Ultimate Class Tool is a lightweight web app for casual Super Smash Bros. Ultima
 1. Open `https://www.bbussell.com/UltimateClassTool/` (or your local build) in a modern browser.
 2. Choose a class from the dropdown to filter the roster.
 3. Hit **Roll** (or press `R`) to pick the next fighter for your casual mode.
-4. Select **Custom Class** to create your own pool—tap portraits to include fighters, name the class, and save.
+4. Select **Custom Class** to create your own pool, tap portraits to include fighters, name the class, and save.
 5. Use **Export Custom Class Set** to copy a share URL to your clipboard. Opening that link imports the set locally.
 6. Use **Delete Custom Class** when you want to remove a saved custom pool.
 
-Typical use cases include party modes, draft wheels, stream incentives, and other casual formats where you want to keep the roster fresh without full competitive power balancing.
+This works for specific or quirky game mode or just messing around with a character set you like!
 
 ## Development
 
